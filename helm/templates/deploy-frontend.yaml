@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-aviral-mern
+spec:
+  replicas: {{ .Values.frontendAviralMern.replicacount }}
+  selector:
+    matchLabels:
+      app: frontend-aviral-mern
+  template:
+    metadata:
+      labels:
+        app: frontend-aviral-mern
+    spec:
+      containers:
+        - name: {{ .Values.frontendAviralMern.image.name }}                                                              #".name" defines as = ".Values.containers.name"
+          image: "{{ .Values.frontendAviralMern.image.repository }}/{{ .Values.frontendAviralMern.image.name }}:{{ .Values.frontendAviralMern.image.tag }}"                             ###{public.ecr.aws/c3w1m1q2}/{frontend-st}:{latest}
+          ports: 
+            - containerPort: {{ .Values.frontendAviralMern.image.port }}                                                      #".port" defines as = ".Values.containers.port"
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-aviral-mern-service
+spec:
+  selector:
+    app: frontend-aviral-mern
+  ports:
+  - protocol: TCP
+    port: {{ .Values.frontendAviralMern.service.port }}
+    targetPort: {{ .Values.frontendAviralMern.image.port }}
+  type: {{ .Values.frontendAviralMern.service.type }}               
+  

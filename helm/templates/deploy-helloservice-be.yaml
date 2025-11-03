@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloservice-be
+spec:
+  replicas: {{ .Values.helloserviceBe.replicacount }}
+  selector:
+    matchLabels:
+      app: helloservice-be
+  template:
+    metadata:
+      labels:
+        app: helloservice-be
+    spec:
+      containers:
+        - name: {{ .Values.helloserviceBe.image.name }}                                                              
+          image: "{{ .Values.helloserviceBe.image.repository }}/{{ .Values.helloserviceBe.image.name }}:{{ .Values.helloserviceBe.image.tag }}"                             ###{public.ecr.aws/c3w1m1q2}/{frontend-st}:{latest}
+          ports: 
+            - containerPort: {{ .Values.helloserviceBe.image.port }}                                                      
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: helloservice-be-service
+spec:
+  selector:
+    app: helloservice-be
+  ports:
+  - protocol: TCP
+    port: {{ .Values.helloserviceBe.service.port }}
+    targetPort: {{ .Values.helloserviceBe.image.port }}
+  type: {{ .Values.helloserviceBe.service.type }}               
+  

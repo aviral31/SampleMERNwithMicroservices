@@ -1,0 +1,32 @@
+frontendAviralMern:
+  replicaCount: 2
+  image:
+    name: frontend
+    repository: 975050024946.dkr.ecr.ca-central-1.amazonaws.com/aviral
+    tag: latest
+    port: 3000
+  service:
+    type: LoadBalancer
+    port: 80
+
+profileserviceBe:
+  replicaCount: 2
+  image:
+    name: profileservice
+    repository: 975050024946.dkr.ecr.ca-central-1.amazonaws.com/aviral
+    tag: latest
+    port: 3002
+  service:
+    type: LoadBalancer
+    port: 80
+
+helloserviceBe:
+  replicaCount: 2
+  image:
+    name: helloservice
+    repository: 975050024946.dkr.ecr.ca-central-1.amazonaws.com/aviral
+    tag: latest
+    port: 3001
+  service:
+    type: LoadBalancer
+    port: 80
