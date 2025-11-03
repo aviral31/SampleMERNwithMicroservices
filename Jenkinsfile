@@ -23,6 +23,7 @@ pipeline {
 
         stage('Login to ECR') {
             steps {
+                withAWS(credentials: 'aws-jenkins-credentials', region: "${AWS_REGION}"){
                 script {
                     sh '''
                         echo "🔐 Logging in to AWS ECR..."
@@ -30,6 +31,7 @@ pipeline {
                     '''
                 }
             }
+        }
         }
 
         stage('Build Docker Images') {
