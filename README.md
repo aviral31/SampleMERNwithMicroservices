@@ -81,9 +81,9 @@ docker push 975050024946.dkr.ecr.ca-central-1.amazonaws.com/aviral/helloservice:
 docker push 975050024946.dkr.ecr.ca-central-1.amazonaws.com/aviral/profileservice:latest
 ```
 
-![Frontend][Screenshots/FrontendECR.png]
-![Hello Service][Screenshots/helloServiceECR.png]
-![Profile Service][Screenshots/profileServiceECR.png]
+![Frontend](Screenshots/FrontendECR.png)
+![Hello Service](Screenshots/helloServiceECR.png)
+![Profile Service](Screenshots/profileServiceECR.png)
 
 
 ## Kubernetes Deployment
@@ -101,7 +101,7 @@ kubectl get pods
 kubectl get services
 ```
 
-![Services][Screenshots/services.png]
+![Services](Screenshots/services.png)
 
 ### Accessing the Application
 
@@ -111,8 +111,8 @@ After successful deployment:
 2. Hello Service: Available through the frontend
 3. Profile Service: Available through the frontend
 
-[Screenshots/frontend.png]
-[Screenshots/helloservice.png]
+(Screenshots/frontend.png)
+(Screenshots/helloservice.png)
 
 ## Service Details
 
