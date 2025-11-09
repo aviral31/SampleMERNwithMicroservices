@@ -10,7 +10,7 @@ The application is structured into the following components:
 - Hello Service: Basic greeting microservice
 - Profile Service: User profile management microservice
 
-[(https://github.com/aviral31/SampleMERNwithMicroservices/blob/d5055ef25275373373e1c05e3ea18e8bb539b284/Screenshots/ArchitectureDiagram.png)]
+ ![Architecture Diagram](https://github.com/aviral31/SampleMERNwithMicroservices/blob/d5055ef25275373373e1c05e3ea18e8bb539b284/Screenshots/ArchitectureDiagram.png)
 
 ## Prerequisites
 
