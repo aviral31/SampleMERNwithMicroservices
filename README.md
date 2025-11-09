@@ -11,7 +11,7 @@ The application is structured into the following components:
 - Profile Service: User profile management microservice
 
 ![Architecture Diagram]
-[Screenshots/ArchitectureDiagram.png]
+[https://github.com/aviral31/SampleMERNwithMicroservices/blob/1bb0f1f0d79f04a6489ec824fa9d5bfd06134fef/Screenshots/helloservice.png]
 
 ## Prerequisites
 
