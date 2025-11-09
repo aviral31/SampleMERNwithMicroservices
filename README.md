@@ -11,7 +11,7 @@ The application is structured into the following components:
 - Profile Service: User profile management microservice
 
 ![Architecture Diagram]
-[Insert architecture diagram showing the interaction between services]
+[Screenshots/ArchitectureDiagram.png]
 
 ## Prerequisites
 
@@ -61,8 +61,6 @@ npm install
 npm start
 ```
 
-[Insert screenshot of local development environment]
-
 ## Building and Pushing Docker Images
 
 1. Build the images:
@@ -84,7 +82,10 @@ docker push 975050024946.dkr.ecr.ca-central-1.amazonaws.com/aviral/helloservice:
 docker push 975050024946.dkr.ecr.ca-central-1.amazonaws.com/aviral/profileservice:latest
 ```
 
-[Insert screenshot of successful docker push to ECR]
+![Frontend][Screenshots/FrontendECR.png]
+![Hello Service][Screenshots/helloServiceECR.png]
+![Profile Service][Screenshots/profileServiceECR.png]
+
 
 ## Kubernetes Deployment
 
@@ -101,7 +102,7 @@ kubectl get pods
 kubectl get services
 ```
 
-[Insert screenshot of kubectl get pods and services output]
+![Services][Screenshots/services.png]
 
 ### Accessing the Application
 
@@ -111,7 +112,8 @@ After successful deployment:
 2. Hello Service: Available through the frontend
 3. Profile Service: Available through the frontend
 
-[Insert screenshot of the application running in browser]
+[Screenshots/frontend.png]
+[Screenshots/helloservice.png]
 
 ## Service Details
 
@@ -153,17 +155,6 @@ The application can be configured through the following files:
 1. `helm/values.yaml`: Kubernetes deployment configuration
 2. `docker-compose.yml`: Local development configuration
 3. Environment variables in each service
-
-## Screenshots
-
-### Local Development
-[Insert screenshot of local development environment]
-
-### Kubernetes Dashboard
-[Insert screenshot of Kubernetes dashboard showing pods]
-
-### Application UI
-[Insert screenshot of the frontend application]
 
 ## Troubleshooting
 
